@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Page Not Found | CodeBySameeer</title>
+    <meta name="robots" content="noindex" />
+    <meta name="theme-color" content="#2563EB" media="(prefers-color-scheme: light)" />
+    <meta name="theme-color" content="#020617" media="(prefers-color-scheme: dark)" />
+    <link rel="icon" type="image/png" href="images/logo-dark.png" />
+
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;500;600;700;800&family=Space+Grotesk:wght@500;700&display=swap"
+      rel="stylesheet" />
+
+    <link rel="stylesheet" href="styles.css" />
+    <link rel="stylesheet" href="media.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css" />
+
+    <!-- Apply saved theme before paint to avoid flash -->
+    <script>
+      (function () {
+        try {
+          var saved = localStorage.getItem("theme");
+          var dark = saved
+            ? saved === "dark"
+            : window.matchMedia("(prefers-color-scheme: dark)").matches;
+          if (dark) document.documentElement.classList.add("dark-theme");
+        } catch (e) {}
+      })();
+    </script>
+  </head>
+  <body>
+    <a class="skip-to-content" href="#main-content">Skip to main content</a>
+    <canvas id="grid-canvas" aria-hidden="true"></canvas>
+
+    <main id="main-content" class="error-page">
+      <div class="error-inner">
+        <p class="section-tag">Error 404</p>
+        <h1 class="error-title">Lost?</h1>
+        <p class="error-text">
+          This page doesn't exist. But hey — while you're here, why not check
+          out my work?
+        </p>
+        <div class="error-actions">
+          <a href="/" class="hero-btn">Back to Home</a>
+          <a href="/#projects" class="hero-btn btn-outline">View Projects</a>
+        </div>
+      </div>
+    </main>
+  </body>
+</html>

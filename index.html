@@ -1,0 +1,665 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta
+      name="description"
+      content="Sameeer – Front-End Developer building responsive, user-focused web experiences for small businesses and creators. Available for freelance work." />
+    <meta name="theme-color" content="#2563EB" media="(prefers-color-scheme: light)" />
+    <meta name="theme-color" content="#020617" media="(prefers-color-scheme: dark)" />
+    <title>CodeBySameeer | Front-End Developer</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;500;600;700;800&family=Space+Grotesk:wght@500;700&display=swap"
+      rel="stylesheet" />
+    <link rel="icon" type="image/png" href="images/logo-dark.png" />
+    <link rel="apple-touch-icon" href="images/logo-dark.png" />
+    <link rel="stylesheet" href="styles.css" />
+    <link rel="stylesheet" href="media.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css" />
+
+    <script>
+      (function () {
+        try {
+          var saved = localStorage.getItem("theme");
+          var dark = saved
+            ? saved === "dark"
+            : window.matchMedia("(prefers-color-scheme: dark)").matches;
+          if (dark) document.documentElement.classList.add("dark-theme");
+        } catch (e) {}
+      })();
+    </script>
+
+    <meta property="og:title" content="CodeBySameeer – Front-End Developer" />
+    <meta property="og:description" content="Building responsive, user-focused web experiences for small businesses and creators." />
+    <meta property="og:image" content="https://codebysameeer.netlify.app/images/og-cover.svg" />
+    <meta property="og:url" content="https://codebysameeer.netlify.app/" />
+    <meta property="og:type" content="website" />
+
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="CodeBySameeer – Front-End Developer" />
+    <meta name="twitter:description" content="Building responsive, user-focused web experiences for small businesses and creators." />
+    <meta name="twitter:image" content="https://codebysameeer.netlify.app/images/og-cover.svg" />
+
+    <link rel="canonical" href="https://codebysameeer.netlify.app/" />
+
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@type": "Person",
+        "name": "Sameeer",
+        "url": "https://codebysameeer.netlify.app/",
+        "image": "https://codebysameeer.netlify.app/images/passs.jpeg",
+        "jobTitle": "Front-End Developer",
+        "description": "Front-end developer specializing in responsive HTML/CSS builds and clean user interfaces.",
+        "knowsAbout": ["HTML5", "CSS3", "Responsive Web Design", "Web Accessibility"],
+        "address": { "@type": "PostalAddress", "addressCountry": "NP" },
+        "sameAs": [
+          "https://github.com/CodeBySameeer",
+          "https://www.upwork.com/freelancers/~01ae47996623610739"
+        ]
+      }
+    </script>
+  </head>
+  <body>
+    <a href="https://wa.me/9779766884391" class="whatsapp-float" target="_blank" rel="noopener noreferrer" aria-label="Chat on WhatsApp">
+      <i aria-hidden="true" class="fab fa-whatsapp"></i>
+    </a>
+    <a class="skip-to-content" href="#main-content">Skip to main content</a>
+
+    <canvas id="grid-canvas" aria-hidden="true"></canvas>
+
+    <div class="preloader">
+      <div class="preloader-scene">
+        <div class="preloader-logo-wrap">
+          <svg class="brand-mark-preloader" viewBox="0 0 120 120" role="img" aria-label="CodeBySameeer logo">
+            <title>CodeBySameeer logo</title>
+            <rect x="1" y="10" width="119" height="104" rx="25" style="fill: var(--card-color); stroke: currentColor; stroke-width: 8;" />
+            <rect x="12" y="24" width="95" height="76" rx="18" style="fill: var(--primary-color); opacity: 0.14" />
+            <path d="M70 30 L50 96" fill="none" style="stroke: var(--secondary-color); stroke-width: 7; stroke-linecap: round;" />
+            <text x="12" y="80" style="fill: var(--primary-color)" font-size="60" font-weight="700" font-family="Space Grotesk, serif">C</text>
+            <text x="68" y="83" style="fill: var(--secondary-color)" font-size="57" font-weight="700" font-family="Space Grotesk, serif">S</text>
+          </svg>
+        </div>
+        <p class="preloader-tagline"></p>
+      </div>
+    </div>
+
+    <header>
+      <nav class="navbar" aria-label="Main navigation">
+        <div class="nav_1">
+          <a href="#home" data-page="home" class="brand-logo-link" aria-label="Go to home">
+            <svg class="brand-mark" viewBox="0 0 120 120" role="img" aria-label="CodeBySameeer logo">
+              <title>CodeBySameeer logo</title>
+              <rect x="1" y="10" width="119" height="104" rx="25" style="fill: var(--card-color)" stroke="currentColor" stroke-width="8" />
+              <rect x="12" y="24" width="95" height="76" rx="18" style="fill: var(--primary-color)" opacity="0.14" />
+              <path d="M70 30 L50 96" fill="none" style="stroke: var(--secondary-color)" stroke-width="7" stroke-linecap="round" />
+              <text x="12" y="80" style="fill: var(--primary-color)" font-size="60" font-weight="700" font-family="Space Grotesk, serif">C</text>
+              <text x="68" y="83" style="fill: var(--secondary-color)" font-size="57" font-weight="700" font-family="Space Grotesk, serif">S</text>
+            </svg>
+          </a>
+          <a href="#home" data-page="home" class="logo">CodeBySameeer.</a>
+        </div>
+
+        <div class="nav_2">
+          <ul class="nav-links">
+            <li><a href="#home" data-page="home" class="nav-link">Home</a></li>
+            <li><a href="#about" data-page="about" class="nav-link">About</a></li>
+            <li><a href="#skills" data-page="skills" class="nav-link">Skills</a></li>
+            <li><a href="#projects" data-page="projects" class="nav-link">Projects</a></li>
+            <li><a href="#services" data-page="services" class="nav-link">Services</a></li>
+            <li><a href="#contact" data-page="contact" class="nav-link">Contact</a></li>
+          </ul>
+
+          <div class="theme-toggle">
+            <button id="theme-toggle" class="theme-button" type="button" aria-label="Toggle theme">
+              <i class="fas fa-moon" aria-hidden="true"></i>
+            </button>
+          </div>
+
+          <button class="menu-toggle" type="button" aria-label="Open menu" aria-controls="mobile-menu" aria-expanded="false"></button>
+        </div>
+
+        <div id="mobile-menu" class="mobile-menu" aria-hidden="true">
+          <div class="nav-links">
+            <ul>
+              <li><a href="#home" data-page="home" class="nav-link">Home</a></li>
+              <li><a href="#about" data-page="about" class="nav-link">About</a></li>
+              <li><a href="#skills" data-page="skills" class="nav-link">Skills</a></li>
+              <li><a href="#projects" data-page="projects" class="nav-link">Projects</a></li>
+              <li><a href="#services" data-page="services" class="nav-link">Services</a></li>
+              <li><a href="#contact" data-page="contact" class="nav-link">Contact</a></li>
+            </ul>
+          </div>
+        </div>
+        <div class="menu-overlay" aria-hidden="true"></div>
+      </nav>
+    </header>
+
+    <main id="main-content">
+      <!-- ---------- HOME ---------- -->
+      <section class="page active" id="page-home" data-page="home">
+        <div class="hero">
+          <div class="hero-content">
+            <div class="hero-image">
+              <img src="images/passs.jpeg" alt="Profile picture of Sameeer" fetchpriority="high" decoding="async" />
+            </div>
+
+            <div class="hero-text">
+              <p class="hero-tag">Available · Replies within 24h</p>
+              <h1 class="section-heading">Hi, I'm Sameeer...</h1>
+              <p class="hero-subtitle"><span id="typing-text"></span></p>
+              <p class="hero-description">
+                I build responsive, user-friendly websites for small
+                businesses, creators, and startups.
+              </p>
+
+              <div class="hero-stats">
+                <div class="hero-stat"><strong>8+</strong><span>Projects Built</span></div>
+                <div class="hero-stat"><strong>2+</strong><span>Years Coding</span></div>
+                <div class="hero-stat"><strong>100%</strong><span>Responsive</span></div>
+              </div>
+
+              <div class="hero-actions">
+                <a href="#projects" data-page="projects" class="hero-btn">View My Work</a>
+                <a href="#contact" data-page="contact" class="hero-btn btn-outline">Hire Me</a>
+              </div>
+            </div>
+
+            <div class="social-links">
+              <h3>Social links :</h3>
+              <a href="https://github.com/CodeBySameeer" target="_blank" rel="noopener noreferrer" aria-label="GitHub"><i aria-hidden="true" class="fab fa-github"></i></a>
+              <a href="https://www.upwork.com/freelancers/~01ae47996623610739" target="_blank" rel="noopener noreferrer" aria-label="Upwork"><i aria-hidden="true" class="fa-brands fa-square-upwork"></i></a>
+              <a href="https://wa.me/9779766884391" target="_blank" rel="noopener noreferrer" aria-label="WhatsApp"><i aria-hidden="true" class="fab fa-whatsapp"></i></a>
+              <a href="https://www.instagram.com/_ksameeer.___/" target="_blank" rel="noopener noreferrer" aria-label="Instagram"><i aria-hidden="true" class="fab fa-instagram"></i></a>
+              <a href="https://www.facebook.com/people/Sam%C3%ABeer%E3%81%81/100080206026079/" target="_blank" rel="noopener noreferrer" aria-label="Facebook"><i aria-hidden="true" class="fab fa-facebook"></i></a>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- ---------- ABOUT ---------- -->
+      <section class="page" id="page-about" data-page="about">
+        <div class="about">
+          <div class="about-glow about-glow-left" aria-hidden="true"></div>
+          <div class="about-glow about-glow-right" aria-hidden="true"></div>
+
+          <div class="about-container">
+            <div class="about-image-wrap">
+              <img src="images/bb.png" alt="Portrait of Sameeer" class="profile-pic" loading="lazy" decoding="async" />
+              <div class="status-chip">
+                <span class="status-dot"></span>
+                Available for freelance projects
+              </div>
+            </div>
+
+            <div class="about-text">
+              <p class="section-tag">Who I Am</p>
+              <h2>Self-taught front-end developer focused on clean, responsive builds.</h2>
+              <p class="about-intro">
+                I'm Sameeer, a self-taught front-end developer from Nepal. I
+                started coding while studying civil engineering — one HTML file
+                turned into a habit, and the habit turned into a career path.
+              </p>
+              <p class="about-intro">
+                I focus on responsive layouts that load fast and feel right on
+                any screen. Most of my work so far has been rebuilding complex
+                UIs from scratch to understand how real production sites are
+                structured. Right now I'm taking on freelance work for small
+                businesses and creators.
+              </p>
+
+              <div class="about-info">
+                <div class="info-item"><i class="fas fa-location-dot info-icon"></i><span>Nepal · GMT+5:45</span></div>
+                <div class="info-item"><i class="fas fa-briefcase info-icon"></i><span>2+ years coding</span></div>
+                <div class="info-item"><i class="fas fa-globe info-icon"></i><span>Open to remote work</span></div>
+              </div>
+
+              <div class="about-actions">
+                <a href="#projects" data-page="projects" class="hero-btn">Explore Projects</a>
+                <a href="#contact" data-page="contact" class="hero-btn btn-outline">Contact Me</a>
+                <a href="resume.pdf" download class="hero-btn btn-outline"><i class="fas fa-download" aria-hidden="true"></i> Resume</a>
+              </div>
+            </div>
+          </div>
+
+          <div class="about-highlights">
+            <article class="highlight-card">
+              <h3>8+</h3>
+              <p>Projects built end-to-end — from clone rebuilds to original mini apps.</p>
+            </article>
+            <article class="highlight-card">
+              <h3>Fast UI</h3>
+              <p>Focused on responsive layouts, clean architecture, and maintainable CSS.</p>
+            </article>
+            <article class="highlight-card">
+              <h3>User First</h3>
+              <p>Every section is built with accessibility, readability, and smooth flow in mind.</p>
+            </article>
+          </div>
+
+          <div class="focus-grid">
+            <article class="focus-card">
+              <i class="fas fa-code"></i>
+              <h4>Modern Front-End</h4>
+              <p>Semantic HTML, scalable CSS, and interactive JavaScript experiences.</p>
+            </article>
+            <article class="focus-card">
+              <i class="fas fa-mobile-screen-button"></i>
+              <h4>Responsive Design</h4>
+              <p>Layouts that stay clean and readable from mobile screens to large desktops.</p>
+            </article>
+            <article class="focus-card">
+              <i class="fas fa-gauge-high"></i>
+              <h4>Performance Mindset</h4>
+              <p>Optimized visuals, clear structure, and efficient code for faster load times.</p>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <!-- ---------- SKILLS ---------- -->
+      <section class="page" id="page-skills" data-page="skills">
+        <div class="skill_section">
+          <span class="section-tag">My Toolkit</span>
+          <h2>Skills &amp; Technologies</h2>
+          <p class="skills-intro">
+            I specialize in semantic HTML and modern CSS — the foundation of
+            every fast, accessible website.
+          </p>
+
+          <div class="skill-categories">
+            <div class="skill-category">
+              <h3 class="category-title"><i class="fas fa-layer-group"></i> Core Strengths</h3>
+              <div class="skill-grid">
+                <div class="skill-item">
+                  <div class="skill-icon-wrap"><i class="fab fa-html5 skill-icon"></i></div>
+                  <span class="skill-text">HTML5</span>
+                  <span class="skill-level">Advanced</span>
+                </div>
+                <div class="skill-item">
+                  <div class="skill-icon-wrap"><i class="fab fa-css3-alt skill-icon"></i></div>
+                  <span class="skill-text">CSS3</span>
+                  <span class="skill-level">Advanced</span>
+                </div>
+                <div class="skill-item">
+                  <div class="skill-icon-wrap"><i class="fas fa-mobile-screen-button skill-icon"></i></div>
+                  <span class="skill-text">Responsive Design</span>
+                  <span class="skill-level">Advanced</span>
+                </div>
+                <div class="skill-item">
+                  <div class="skill-icon-wrap"><i class="fas fa-universal-access skill-icon"></i></div>
+                  <span class="skill-text">Accessibility</span>
+                  <span class="skill-level">Intermediate</span>
+                </div>
+              </div>
+            </div>
+
+            <div class="skill-category">
+              <h3 class="category-title"><i class="fas fa-tools"></i> Tools I Use</h3>
+              <div class="skill-grid">
+                <div class="skill-item">
+                  <div class="skill-icon-wrap"><i class="fas fa-code skill-icon"></i></div>
+                  <span class="skill-text">VS Code</span>
+                  <span class="skill-level">Daily</span>
+                </div>
+                <div class="skill-item">
+                  <div class="skill-icon-wrap"><i class="fab fa-figma skill-icon"></i></div>
+                  <span class="skill-text">Figma</span>
+                  <span class="skill-level">Comfortable</span>
+                </div>
+                <div class="skill-item">
+                  <div class="skill-icon-wrap"><i class="fab fa-git-alt skill-icon"></i></div>
+                  <span class="skill-text">Git &amp; GitHub</span>
+                  <span class="skill-level">Working</span>
+                </div>
+                <div class="skill-item">
+                  <div class="skill-icon-wrap"><i class="fas fa-palette skill-icon"></i></div>
+                  <span class="skill-text">Canva</span>
+                  <span class="skill-level">Comfortable</span>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <p class="skills-note">
+            Currently deepening my JavaScript and Git workflow on the side.
+          </p>
+
+          <div class="skills-footer">
+            <a href="#projects" data-page="projects" class="hero-btn">See My Projects</a>
+            <a href="#contact" data-page="contact" class="hero-btn btn-outline">Work With Me</a>
+          </div>
+        </div>
+      </section>
+
+      <!-- ---------- PROJECTS ---------- -->
+      <section class="page" id="page-projects" data-page="projects">
+        <div class="projects">
+          <span class="section-tag">Selected Work</span>
+          <h2>Projects</h2>
+          <p class="projects-intro">Click any project to see the details.</p>
+
+          <div class="project-filters" role="tablist" aria-label="Filter projects">
+            <button class="filter-btn active" data-filter="all" role="tab" aria-selected="true">All</button>
+            <button class="filter-btn" data-filter="original" role="tab" aria-selected="false">Original</button>
+            <button class="filter-btn" data-filter="clone" role="tab" aria-selected="false">Clones</button>
+          </div>
+
+          <div class="project-tiles" id="projectTiles">
+
+            <button class="project-tile" data-project-id="k-sewa" data-type="original">
+              <div class="tile-media">
+                <img src="images/ksewa.png" alt="K-Sewa preview" loading="lazy"
+                     onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';" />
+                <div class="tile-fallback" style="display:none;"><i class="fas fa-handshake-angle" aria-hidden="true"></i></div>
+                <span class="tile-type">Original</span>
+                <div class="tile-hover-overlay">
+                  <span class="tile-cta">View details <i class="fas fa-arrow-right" aria-hidden="true"></i></span>
+                </div>
+              </div>
+              <div class="tile-body">
+                <h3>K-Sewa</h3>
+                <p>Services marketplace for Nepal</p>
+                <span class="tile-hint"><i class="fas fa-mouse-pointer" aria-hidden="true"></i> Click to explore</span>
+              </div>
+            </button>
+
+            <button class="project-tile" data-project-id="mu-library" data-type="original">
+              <div class="tile-media">
+                <img src="images/mu-library.png" alt="MU Library preview" loading="lazy"
+                     onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';" />
+                <div class="tile-fallback" style="display:none;"><i class="fas fa-book-open" aria-hidden="true"></i></div>
+                <span class="tile-type">Original</span>
+                <div class="tile-hover-overlay">
+                  <span class="tile-cta">View details <i class="fas fa-arrow-right" aria-hidden="true"></i></span>
+                </div>
+              </div>
+              <div class="tile-body">
+                <h3>MU Digital Library</h3>
+                <p>Offline-first study hub</p>
+                <span class="tile-hint"><i class="fas fa-mouse-pointer" aria-hidden="true"></i> Click to explore</span>
+              </div>
+            </button>
+
+            <button class="project-tile" data-project-id="netflix" data-type="clone">
+              <div class="tile-media">
+                <img src="images/netflix.png" alt="Netflix Clone preview" loading="lazy" />
+                <span class="tile-type">Clone</span>
+                <div class="tile-hover-overlay">
+                  <span class="tile-cta">View details <i class="fas fa-arrow-right" aria-hidden="true"></i></span>
+                </div>
+              </div>
+              <div class="tile-body">
+                <h3>Netflix Clone</h3>
+                <p>Layered gradients, pure CSS</p>
+                <span class="tile-hint"><i class="fas fa-mouse-pointer" aria-hidden="true"></i> Click to explore</span>
+              </div>
+            </button>
+
+            <button class="project-tile" data-project-id="amazon" data-type="clone">
+              <div class="tile-media">
+                <img src="images/amazon.png" alt="Amazon Clone preview" loading="lazy" />
+                <span class="tile-type">Clone</span>
+                <div class="tile-hover-overlay">
+                  <span class="tile-cta">View details <i class="fas fa-arrow-right" aria-hidden="true"></i></span>
+                </div>
+              </div>
+              <div class="tile-body">
+                <h3>Amazon Clone</h3>
+                <p>Product grids, cart UI</p>
+                <span class="tile-hint"><i class="fas fa-mouse-pointer" aria-hidden="true"></i> Click to explore</span>
+              </div>
+            </button>
+
+            <button class="project-tile" data-project-id="youtube" data-type="clone">
+              <div class="tile-media">
+                <img src="images/youtube.png" alt="YouTube Clone preview" loading="lazy" />
+                <span class="tile-type">Clone</span>
+                <div class="tile-hover-overlay">
+                  <span class="tile-cta">View details <i class="fas fa-arrow-right" aria-hidden="true"></i></span>
+                </div>
+              </div>
+              <div class="tile-body">
+                <h3>YouTube Clone</h3>
+                <p>Search, playlists, dark mode</p>
+                <span class="tile-hint"><i class="fas fa-mouse-pointer" aria-hidden="true"></i> Click to explore</span>
+              </div>
+            </button>
+
+            <button class="project-tile" data-project-id="spotify" data-type="clone">
+              <div class="tile-media">
+                <img src="images/spotify.png" alt="Spotify Clone preview" loading="lazy" />
+                <span class="tile-type">Clone</span>
+                <div class="tile-hover-overlay">
+                  <span class="tile-cta">View details <i class="fas fa-arrow-right" aria-hidden="true"></i></span>
+                </div>
+              </div>
+              <div class="tile-body">
+                <h3>Spotify Clone</h3>
+                <p>Playlist + persistent player</p>
+                <span class="tile-hint"><i class="fas fa-mouse-pointer" aria-hidden="true"></i> Click to explore</span>
+              </div>
+            </button>
+
+          </div>
+
+          <div class="projects-footer">
+            <a href="#contact" data-page="contact" class="hero-btn">Start Your Project</a>
+          </div>
+        </div>
+      </section>
+
+      <!-- ---------- SERVICES ---------- -->
+      <section class="page" id="page-services" data-page="services">
+        <div class="services">
+          <span class="section-tag">What I Offer</span>
+          <h2>Services</h2>
+          <p class="services-intro">
+            Clear scope, honest pricing, and clean code. Perfect for small
+            businesses, creators, and startups getting their first website.
+          </p>
+
+          <div class="services-grid">
+            <article class="service-card">
+              <div class="service-icon"><i class="fas fa-code"></i></div>
+              <h3>Figma / PSD → HTML &amp; CSS</h3>
+              <p>Pixel-perfect conversion of your design file into a responsive webpage. Clean, semantic, mobile-first.</p>
+              <ul class="service-features">
+                <li><i class="fas fa-check"></i> Fully responsive</li>
+                <li><i class="fas fa-check"></i> Semantic HTML5</li>
+                <li><i class="fas fa-check"></i> 3 revisions included</li>
+              </ul>
+              <div class="service-price"><span class="from">from</span><strong>$50</strong></div>
+            </article>
+
+            <article class="service-card">
+              <div class="service-icon"><i class="fas fa-window-maximize"></i></div>
+              <h3>Responsive Landing Page</h3>
+              <p>A complete one-page site with hero, features, testimonials, and a contact form. Ready to deploy.</p>
+              <ul class="service-features">
+                <li><i class="fas fa-check"></i> Up to 6 sections</li>
+                <li><i class="fas fa-check"></i> Contact form setup</li>
+                <li><i class="fas fa-check"></i> Basic SEO tags</li>
+              </ul>
+              <div class="service-price"><span class="from">from</span><strong>$120</strong></div>
+            </article>
+
+            <article class="service-card">
+              <div class="service-icon"><i class="fas fa-envelope"></i></div>
+              <h3>Email Template Development</h3>
+              <p>HTML email templates that render correctly across Gmail, Outlook, Apple Mail, and mobile clients.</p>
+              <ul class="service-features">
+                <li><i class="fas fa-check"></i> Cross-client tested</li>
+                <li><i class="fas fa-check"></i> Inline CSS</li>
+                <li><i class="fas fa-check"></i> Mobile-friendly</li>
+              </ul>
+              <div class="service-price"><span class="from">from</span><strong>$40</strong></div>
+            </article>
+
+            <article class="service-card">
+              <div class="service-icon"><i class="fas fa-screwdriver-wrench"></i></div>
+              <h3>Website Maintenance &amp; Fixes</h3>
+              <p>Fix broken layouts, update content, resolve responsive issues, or add small features to an existing site.</p>
+              <ul class="service-features">
+                <li><i class="fas fa-check"></i> Bug fixes</li>
+                <li><i class="fas fa-check"></i> Content updates</li>
+                <li><i class="fas fa-check"></i> Responsive repairs</li>
+              </ul>
+              <div class="service-price"><span class="from">custom</span><strong>Quote</strong></div>
+            </article>
+          </div>
+
+          <div class="services-process">
+            <h3 class="process-title">How It Works</h3>
+            <div class="process-grid">
+              <div class="process-step"><span class="step-number">01</span><h4>Brief</h4><p>You describe the project — goals, pages, deadline.</p></div>
+              <div class="process-step"><span class="step-number">02</span><h4>Quote</h4><p>I send a fixed price and timeline within 24 hours.</p></div>
+              <div class="process-step"><span class="step-number">03</span><h4>Build</h4><p>I build it, share progress, and take your feedback.</p></div>
+              <div class="process-step"><span class="step-number">04</span><h4>Deliver</h4><p>Final files, source code, and a walkthrough on request.</p></div>
+            </div>
+          </div>
+
+          <div class="services-footer">
+            <a href="#contact" data-page="contact" class="hero-btn">Get a Quote</a>
+            <a href="#projects" data-page="projects" class="hero-btn btn-outline">See My Work</a>
+          </div>
+        </div>
+      </section>
+
+      <!-- ---------- CONTACT ---------- -->
+      <section class="page" id="page-contact" data-page="contact">
+        <div class="contact">
+          <p class="section-tag">Let's Build</p>
+          <h2>Contact Me</h2>
+          <p class="contact-intro">Have a project in mind or just want to say hello? Let's talk.</p>
+
+          <div class="contact-layout">
+            <div class="contact-cards">
+              <article class="contact-card">
+                <i aria-hidden="true" class="fas fa-envelope"></i>
+                <h3>Email</h3>
+                <p><a href="mailto:samirkathayat2006@gmail.com">samirkathayat2006@gmail.com</a></p>
+              </article>
+              <article class="contact-card">
+                <i aria-hidden="true" class="fas fa-location-dot"></i>
+                <h3>Location</h3>
+                <p>Nepal · GMT+5:45</p>
+              </article>
+              <article class="contact-card">
+                <i aria-hidden="true" class="fas fa-clock"></i>
+                <h3>Response Time</h3>
+                <p>Usually within 24 hours, Mon–Sat</p>
+              </article>
+            </div>
+
+            <form id="contact-form" class="contact-form" action="https://formspree.io/f/mqpepgyl" method="POST" novalidate>
+              <input type="text" name="_gotcha" style="display: none" tabindex="-1" autocomplete="off" />
+              <input type="hidden" name="_subject" value="New portfolio inquiry from CodeBySameeer" />
+
+              <div class="input-group">
+                <i aria-hidden="true" class="fas fa-user"></i>
+                <input id="fullname" name="name" type="text" required placeholder=" " autocomplete="name" />
+                <label for="fullname">Full Name</label>
+                <span id="name-error" class="error-msg" aria-live="polite"></span>
+              </div>
+              <div class="input-group">
+                <i aria-hidden="true" class="fas fa-envelope"></i>
+                <input id="email" name="email" type="email" required placeholder=" " autocomplete="email" />
+                <label for="email">Email Address</label>
+                <span id="email-error" class="error-msg" aria-live="polite"></span>
+              </div>
+              <div class="input-group">
+                <i aria-hidden="true" class="fas fa-comment message-icon"></i>
+                <textarea id="message" name="message" required placeholder=" " rows="5" maxlength="500"></textarea>
+                <label for="message">Your Message</label>
+                <span id="message-error" class="error-msg" aria-live="polite"></span>
+                <span class="char-count">0 / 500</span>
+              </div>
+              <button type="submit" id="submitBtn">Send Message</button>
+            </form>
+          </div>
+
+          <div class="contact-social-block">
+            <p class="contact-social-label">Or reach me directly</p>
+            <div class="contact-social-row">
+              <a href="https://wa.me/9779766884391" target="_blank" rel="noopener noreferrer" aria-label="WhatsApp" class="contact-social-btn" data-brand="whatsapp"><i aria-hidden="true" class="fab fa-whatsapp"></i></a>
+              <a href="https://www.instagram.com/_ksameeer.___/" target="_blank" rel="noopener noreferrer" aria-label="Instagram" class="contact-social-btn" data-brand="instagram"><i aria-hidden="true" class="fab fa-instagram"></i></a>
+              <a href="mailto:samirkathayat2006@gmail.com" aria-label="Email" class="contact-social-btn" data-brand="email"><i aria-hidden="true" class="fas fa-envelope"></i></a>
+              <a href="https://www.facebook.com/people/Sam%C3%ABeer%E3%81%81/100080206026079/" target="_blank" rel="noopener noreferrer" aria-label="Facebook" class="contact-social-btn" data-brand="facebook"><i aria-hidden="true" class="fab fa-facebook-f"></i></a>
+              <a href="https://github.com/CodeBySameeer" target="_blank" rel="noopener noreferrer" aria-label="GitHub" class="contact-social-btn" data-brand="github"><i aria-hidden="true" class="fab fa-github"></i></a>
+            </div>
+          </div>
+
+          <div id="toast-success" class="toast-success" role="status" aria-live="polite">
+            Thank you! Your message has been sent.
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <footer class="site-footer">
+      <div class="footer-inner">
+        <div class="footer-top">
+          <a href="#home" data-page="home" class="footer-brand">CodeBySameeer.</a>
+          <p class="footer-copy">Front‑End Developer crafting responsive, user‑focused web experiences. Open to freelance &amp; remote collaborations.</p>
+        </div>
+
+        <ul class="footer-links">
+          <li><a href="#home" data-page="home">Home</a></li>
+          <li><a href="#about" data-page="about">About</a></li>
+          <li><a href="#skills" data-page="skills">Skills</a></li>
+          <li><a href="#projects" data-page="projects">Projects</a></li>
+          <li><a href="#services" data-page="services">Services</a></li>
+          <li><a href="#contact" data-page="contact">Contact</a></li>
+        </ul>
+
+        <div class="footer-social">
+          <a href="https://github.com/CodeBySameeer" target="_blank" rel="noopener noreferrer" aria-label="GitHub"><i aria-hidden="true" class="fab fa-github"></i></a>
+          <a href="https://www.upwork.com/freelancers/~01ae47996623610739" target="_blank" rel="noopener noreferrer" aria-label="Upwork"><i aria-hidden="true" class="fa-brands fa-square-upwork"></i></a>
+          <a href="https://wa.me/9779766884391" target="_blank" rel="noopener noreferrer" aria-label="WhatsApp"><i aria-hidden="true" class="fab fa-whatsapp"></i></a>
+          <a href="https://www.instagram.com/_ksameeer.___/" target="_blank" rel="noopener noreferrer" aria-label="Instagram"><i aria-hidden="true" class="fab fa-instagram"></i></a>
+          <a href="https://www.facebook.com/people/Sam%C3%ABeer%E3%81%81/100080206026079/" target="_blank" rel="noopener noreferrer" aria-label="Facebook"><i aria-hidden="true" class="fab fa-facebook"></i></a>
+          <a href="mailto:samirkathayat2006@gmail.com" aria-label="Email"><i aria-hidden="true" class="fas fa-envelope"></i></a>
+        </div>
+
+        <p class="footer-note">&copy; <span id="footer-year">2026</span> Sameeer. All rights reserved.</p>
+        <p class="footer-note footer-updated">Last updated: October 2026</p>
+      </div>
+    </footer>
+
+    <!-- ============ PROJECT MODAL ============ -->
+    <div class="project-modal" id="projectModal" role="dialog" aria-modal="true" aria-labelledby="modalTitle" aria-hidden="true">
+      <div class="modal-backdrop" data-close-modal></div>
+      <div class="modal-card" role="document">
+        <button class="modal-close" aria-label="Close" data-close-modal>
+          <i class="fas fa-times" aria-hidden="true"></i>
+        </button>
+
+        <div class="modal-media" id="modalMedia"></div>
+
+        <div class="modal-body">
+          <div class="modal-head">
+            <h3 id="modalTitle"></h3>
+            <span class="modal-type" id="modalType"></span>
+          </div>
+
+          <p class="modal-tagline" id="modalTagline"></p>
+
+          <div class="modal-tech" id="modalTech"></div>
+
+          <div class="modal-sections" id="modalSections"></div>
+
+          <div class="modal-actions" id="modalActions"></div>
+        </div>
+      </div>
+    </div>
+
+    <script src="script.js"></script>
+  </body>
+</html>
