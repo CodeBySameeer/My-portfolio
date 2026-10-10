@@ -60,6 +60,11 @@ html {
         var(--background-color);
     background-attachment: fixed;
     transition: background 0.3s ease;
+    color-scheme: light;
+}
+
+.dark-theme {
+    color-scheme: dark;
 }
 
 body {
@@ -1214,24 +1219,77 @@ h6,
 
 .skill-level {
     font-size: var(--fs-body-xs);
-    font-weight: 600;
-    color: var(--text-color);
-    opacity: 0.8;
-    background: rgba(0, 0, 0, 0.04);
-    padding: 0.2rem 0.8rem;
+    font-weight: 700;
+    padding: 0.25rem 0.8rem;
     border-radius: 20px;
+    letter-spacing: 0.03em;
+    display: inline-block;
+    background: rgba(0, 0, 0, 0.04);
+    color: var(--text-color);
+    opacity: 0.9;
 }
 
-.skills-note {
-    max-width: 640px;
-    margin: 0.5rem auto 1.6rem;
-    text-align: center;
-    font-size: var(--fs-body-sm);
-    color: var(--text-color);
-    opacity: 0.75;
-    font-style: italic;
+.skill-level.level-advanced {
+    color: #047857;
+    background: rgba(15, 240, 161, 0.18);
+    border: 1px solid rgba(15, 240, 161, 0.35);
+    opacity: 1;
+}
+
+.dark-theme .skill-level.level-advanced {
+    color: var(--secondary-color);
+    background: rgba(45, 212, 191, 0.15);
+    border-color: rgba(45, 212, 191, 0.35);
+}
+
+.skill-level.level-intermediate {
+    color: #2563EB;
+    background: rgba(37, 99, 235, 0.12);
+    border: 1px solid rgba(37, 99, 235, 0.3);
+    opacity: 1;
+}
+
+.dark-theme .skill-level.level-intermediate {
+    color: #93C5FD;
+    background: rgba(96, 165, 250, 0.15);
+    border-color: rgba(96, 165, 250, 0.35);
+}
+
+.skill-level.level-learning {
+    color: #B45309;
+    background: rgba(245, 158, 11, 0.15);
+    border: 1px solid rgba(245, 158, 11, 0.35);
+    opacity: 1;
+}
+
+.dark-theme .skill-level.level-learning {
+    color: #FCD34D;
+    background: rgba(252, 211, 77, 0.12);
+    border-color: rgba(252, 211, 77, 0.3);
+}
+
+.skill-category--learning {
     position: relative;
-    z-index: 1;
+    border-color: rgba(245, 158, 11, 0.3);
+}
+
+.skill-category--learning .category-title i {
+    color: #F59E0B;
+}
+
+.skill-category--learning::before {
+    content: "";
+    position: absolute;
+    left: 0;
+    top: 15%;
+    bottom: 15%;
+    width: 3px;
+    border-radius: 0 3px 3px 0;
+    background: linear-gradient(180deg, #F59E0B, #FCD34D);
+}
+
+.skill-category--learning:hover {
+    border-color: rgba(245, 158, 11, 0.5);
 }
 
 .skills-footer {
@@ -1267,7 +1325,6 @@ h6,
     z-index: 1;
 }
 
-/* Filters */
 .project-filters {
     display: flex;
     justify-content: center;
@@ -1306,7 +1363,6 @@ h6,
     box-shadow: 0 6px 14px rgba(37, 99, 235, 0.28);
 }
 
-/* Tiles grid */
 .project-tiles {
     display: grid;
     grid-template-columns: repeat(2, 1fr);
@@ -1555,19 +1611,6 @@ h6,
         transform: scale(1.15);
         opacity: 1;
     }
-}
-
-.more-projects-title {
-    font-size: 0.9rem;
-    text-transform: uppercase;
-    letter-spacing: 0.15em;
-    color: var(--text-color);
-    margin: 0 auto 1.4rem;
-    text-align: center;
-    opacity: 0.7;
-    font-weight: 600;
-    position: relative;
-    z-index: 1;
 }
 
 .projects-footer {
@@ -2322,7 +2365,7 @@ body.modal-open {
     opacity: 1;
 }
 
-/* ===== Contact social block ===== */
+/* Contact social block */
 .contact-social-block {
     max-width: 1180px;
     margin: 2.5rem auto 0;
@@ -2557,7 +2600,9 @@ body.modal-open {
 .skill-category,
 .contact-card,
 .contact-form,
-.case-study {
+.case-study,
+.service-card,
+.process-step {
     opacity: 0;
     transform: translateY(24px);
     transition: opacity 0.65s ease, transform 0.65s ease;
@@ -2569,18 +2614,7 @@ body.modal-open {
 .skill-category.visible,
 .contact-card.visible,
 .contact-form.visible,
-.case-study.visible {
-    opacity: 1;
-    transform: translateY(0);
-}
-
-.service-card,
-.process-step {
-    opacity: 0;
-    transform: translateY(24px);
-    transition: opacity 0.65s ease, transform 0.65s ease;
-}
-
+.case-study.visible,
 .service-card.visible,
 .process-step.visible {
     opacity: 1;
@@ -2801,12 +2835,46 @@ body.modal-open {
     margin-left: 0;
 }
 
-/* ===== Project tiles responsive ===== */
+/* ===== Responsive tweaks ===== */
 @media (max-width: 700px) {
     .project-tiles {
         grid-template-columns: 1fr;
         gap: 1rem;
         max-width: 480px;
+    }
+}
+
+@media (max-width: 920px) {
+    .services-grid {
+        grid-template-columns: 1fr 1fr;
+    }
+
+    .process-grid {
+        grid-template-columns: 1fr 1fr;
+    }
+}
+
+@media (max-width: 640px) {
+    .services-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .process-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .services {
+        padding: 6rem 1rem 2.6rem;
+    }
+
+    .service-card {
+        padding: 1.1rem;
+        border-radius: 18px;
+    }
+
+    .services-footer .hero-btn {
+        width: 100%;
+        margin-left: 0;
     }
 }
 
@@ -2869,187 +2937,15 @@ body.modal-open {
     .contact-social-row {
         gap: 0.65rem;
     }
-}
 
-@media (max-width: 360px) {
-    .project-tiles {
-        grid-template-columns: 1fr;
-    }
-}
-
-@media (max-width: 920px) {
-    .services-grid {
-        grid-template-columns: 1fr 1fr;
-    }
-
-    .process-grid {
-        grid-template-columns: 1fr 1fr;
-    }
-}
-
-@media (max-width: 640px) {
-    .services-grid {
-        grid-template-columns: 1fr;
-    }
-
-    .process-grid {
-        grid-template-columns: 1fr;
-    }
-
-    .services {
-        padding: 6rem 1rem 2.6rem;
-    }
-
-    .service-card {
-        padding: 1.1rem;
-        border-radius: 18px;
-    }
-
-    .services-footer .hero-btn {
-        width: 100%;
-        margin-left: 0;
-    }
-};
-        font-size: 1.35rem;
-    }
-
-    .contact-social-block {
-        margin-top: 1.8rem;
-        padding-top: 1.5rem;
-    }
-
-    .contact-social-btn {
-        width: 42px;
-        height: 42px;
-        font-size: 1.05rem;
-    }
-
-    .contact-social-row {
-        gap: 0.65rem;
-    }
-}
-
-@media (max-width: 360px) {
-    .project-tiles {
-        grid-template-columns: 1fr;
-    }
-}
-
-@media (max-width: 920px) {
-    .services-grid {
-        grid-template-columns: 1fr 1fr;
-    }
-
-    .process-grid {
-        grid-template-columns: 1fr 1fr;
-    }
-}
-
-@media (max-width: 640px) {
-    .services-grid {
-        grid-template-columns: 1fr;
-    }
-
-    .process-grid {
-        grid-template-columns: 1fr;
-    }
-
-    .services {
-        padding: 6rem 1rem 2.6rem;
-    }
-
-    .service-card {
-        padding: 1.1rem;
-        border-radius: 18px;
-    }
-
-    .services-footer .hero-btn {
-        width: 100%;
-        margin-left: 0;
-    }
-}
-
-
-
-/* ============================================================
-   SKILLS — level badges + learning accent
-   ============================================================ */
-
-/* Level badges */
-.skill-level {
-    font-size: var(--fs-body-xs);
-    font-weight: 700;
-    padding: 0.25rem 0.8rem;
-    border-radius: 20px;
-    letter-spacing: 0.03em;
-    display: inline-block;
-}
-
-.skill-level.level-advanced {
-    color: #047857;
-    background: rgba(15, 240, 161, 0.18);
-    border: 1px solid rgba(15, 240, 161, 0.35);
-}
-
-.dark-theme .skill-level.level-advanced {
-    color: var(--secondary-color);
-    background: rgba(45, 212, 191, 0.15);
-    border-color: rgba(45, 212, 191, 0.35);
-}
-
-.skill-level.level-intermediate {
-    color: #2563EB;
-    background: rgba(37, 99, 235, 0.12);
-    border: 1px solid rgba(37, 99, 235, 0.3);
-}
-
-.dark-theme .skill-level.level-intermediate {
-    color: #93C5FD;
-    background: rgba(96, 165, 250, 0.15);
-    border-color: rgba(96, 165, 250, 0.35);
-}
-
-.skill-level.level-learning {
-    color: #B45309;
-    background: rgba(245, 158, 11, 0.15);
-    border: 1px solid rgba(245, 158, 11, 0.35);
-}
-
-.dark-theme .skill-level.level-learning {
-    color: #FCD34D;
-    background: rgba(252, 211, 77, 0.12);
-    border-color: rgba(252, 211, 77, 0.3);
-}
-
-/* Learning category: amber accent */
-.skill-category--learning {
-    position: relative;
-    border-color: rgba(245, 158, 11, 0.3);
-}
-
-.skill-category--learning .category-title i {
-    color: #F59E0B;
-}
-
-.skill-category--learning::before {
-    content: "";
-    position: absolute;
-    left: 0;
-    top: 15%;
-    bottom: 15%;
-    width: 3px;
-    border-radius: 0 3px 3px 0;
-    background: linear-gradient(180deg, #F59E0B, #FCD34D);
-}
-
-.skill-category--learning:hover {
-    border-color: rgba(245, 158, 11, 0.5);
-}
-
-/* Mobile */
-@media (max-width: 760px) {
     .skill-level {
         font-size: 0.7rem;
         padding: 0.2rem 0.65rem;
+    }
+}
+
+@media (max-width: 360px) {
+    .project-tiles {
+        grid-template-columns: 1fr;
     }
 }
